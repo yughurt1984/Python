@@ -5,7 +5,8 @@ import easygui as g
 import os
 
 msg_content = ''
-file_name = g.fileopenbox(msg= msg_content,title= '显示文件内容', default= '*.txt')
+file_name = g.file.
+openbox(msg= msg_content,title= '显示文件内容', default= '*.txt')
 
 
 def sav_file(file_name, text_name):
