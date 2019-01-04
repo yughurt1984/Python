@@ -35,25 +35,28 @@ class Turtle:
        
 
 class Fish:
-    def __init__(self, fishNum):
+    def __init__(self, fishNum):        #创建10条鱼的初始坐标
         self._fishNum = fishNum
-    
-    def move(self):
+        self._fishPositon_dict = {}
+        
+        
+        self._fishPositon_dict.fromkeys()
         for i in range(0,self.fishNum):
             self._fishPosionX = random.randint(0,10)
             self._fishPosionY = random.randint(0,10)
             self._fishPosion = [self._fishPosionX, self._fishPosionY]
-            self._fishPositon_list.append((i, self._fishPosion))
-        
+            self._fishPositon_list.append([i, self._fishPosion]) 
+    
+    def move(self):
         fishMoveDirection = random.choice(direction)       #随机一个方向
         for j in range(0, len(self._fishPositon_list)):      #10条鱼一起动
-            while fishMoveNum != fishMoveTimes:
-                if 0 < self._fishPositon_list[j][1][0] < 10 or 0 < self._fishPosion[j][1][1] < 10:        #判断边际
+            if 0 < self._fishPositon_list[j][1][0] < 10 or 0 < self._fishPosion[j][1][1] < 10:        #判断边际
+                self._fishPositon_list.append()
                     self._fishPosion = [self._fishPositon_list[j][1][0] + fishMoveDirection[0], self._fishPositon_list[j][1][1] + fishMoveDirection[1]]
                 else:
                     continue
 
-    def getFishLife(self):
+    def getFishNum(self):
         return self._fishLife
 
     def getFishPosion(self):  
@@ -63,6 +66,6 @@ class Fish:
 turtle = Turtle(100)
 fish = Fish(10)
 
-while self._turtleLife != 0 or self._fishMum != 0:
+while turtle.getTurtleLife != 0 or len(Fish.getFishPosion) != 0:
 
 
