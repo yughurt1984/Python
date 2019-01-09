@@ -14,8 +14,8 @@ class Turtle:
         self._turtlePosion = [0, 0]
         self._turtleLife = turtleLife
     
-    def move(self):
-        self._life -= 1
+    def turtleMove(self):
+        self._turtleLife -= 1
         turtleMoveDirection = random.choice(direction)       #随机一个方向
         turtleMoveTimes = random.randint(1,3)                 #随机（1,2）次数
         turtleMoveNum = 0
@@ -33,39 +33,43 @@ class Turtle:
         return self._turtlePosion
         
        
-
 class Fish:
     def __init__(self, fishNum):        #创建10条鱼的初始坐标
         self._fishNum = fishNum
-        self._fishPositon_dict = {}
-        
-        
-        self._fishPositon_dict.fromkeys()
-        for i in range(0,self.fishNum):
-            self._fishPosionX = random.randint(0,10)
-            self._fishPosionY = random.randint(0,10)
-            self._fishPosion = [self._fishPosionX, self._fishPosionY]
-            self._fishPositon_list.append([i, self._fishPosion]) 
+        self._fishPosition_dict = {}
+        for i in range(0,int(self._fishNum)):
+            fishPositionX = random.randint(0,10)
+            fishPositionY = random.randint(0,10)
+            fishPosition = [fishPositionX, fishPositionY]
+            self._fishPosition_dict[i] = fishPosition
+
     
-    def move(self):
+    def fishMove(self):
         fishMoveDirection = random.choice(direction)       #随机一个方向
-        for j in range(0, len(self._fishPositon_list)):      #10条鱼一起动
-            if 0 < self._fishPositon_list[j][1][0] < 10 or 0 < self._fishPosion[j][1][1] < 10:        #判断边际
-                self._fishPositon_list.append()
-                    self._fishPosion = [self._fishPositon_list[j][1][0] + fishMoveDirection[0], self._fishPositon_list[j][1][1] + fishMoveDirection[1]]
+        for key in self._fishPosition_dict.keys():      #10条鱼一起动
+            if 0 < self._fishPosition_dict[key][0] < 10 or 0 < self._fishPosition_dict[key][0][1] < 10:        #判断边际
+                while True:
+                    self._fishPosition_dict[key] = [self._fishPosition_dict[key][0] + fishMoveDirection[0], self._fishPosition_dict[key][1] + fishMoveDirection[1]]
+                    break
                 else:
                     continue
 
     def getFishNum(self):
-        return self._fishLife
+        return self._fishNum
 
     def getFishPosion(self):  
-        return self._fishPosion_list
+        return self._fishPosition_dict.items()
+
+    def delFish(self):
+        
 
 
 turtle = Turtle(100)
 fish = Fish(10)
 
 while turtle.getTurtleLife != 0 or len(Fish.getFishPosion) != 0:
-
+    turtle.turtleMove()
+    fish.fishMove()
+    fishPosition = fish.getFishPosion()
+    if turtle.getTurtlePosion in 
 
