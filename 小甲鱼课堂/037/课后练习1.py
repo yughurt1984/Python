@@ -5,13 +5,14 @@ import random
 import easygui as g
 
 
-time = 0
-direction = ([-1,0], [0,-1], [1,0], [0,1])
+positionScope = [0,10]
+
 
 
 class Turtle:
-    def __init__(self, turtleLife):
-        self._turtlePosion = [0, 0]
+    def __init__(self):
+        self.power = 100
+        self.turtlePosion = random.randint(positionScope[0], positionScope[1])
         self._turtleLife = turtleLife
     
     def turtleMove(self):
@@ -71,5 +72,6 @@ while turtle.getTurtleLife != 0 or len(Fish.getFishPosion) != 0:
     turtle.turtleMove()
     fish.fishMove()
     fishPosition = fish.getFishPosion()
+    turtlePosition = turtle.
     if turtle.getTurtlePosion in 
 
